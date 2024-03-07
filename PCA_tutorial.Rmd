@@ -1,0 +1,81 @@
+---
+title: "Principal Component Analysis (PCA) Pipeline with PLINK"
+author: "Devashish Tripathi"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## Introduction to PCA
+
+Principal Component Analysis (PCA) is a statistical technique used in the field of genetics to analyze and visualize genetic variation across individuals and populations. It reduces the dimensionality of genetic data while preserving most of the variation, making it easier to identify patterns of diversity and similarity.
+
+PCA works by identifying the directions (principal components) that maximize the variance in the data. Each individual's genetic data can then be projected onto these principal components, allowing researchers to visualize and interpret the genetic structure of the population.
+
+## Importance of the PCA Pipeline Package
+
+This package implements a comprehensive PCA pipeline that utilizes PLINK, a widely used tool in genome-wide association studies (GWAS). The pipeline is designed based on the parameter settings discussed in the Genome Asia 100K project, ensuring robustness and relevance to contemporary genetic research.
+
+The key features of this package include:
+
+- Simplified workflow: Users only need to specify the data path, metadata path, and a few other parameters.
+- Customizability: Although the default settings are derived from the Genome Asia 100K project, users can adjust parameters to suit their specific research needs.
+- Comprehensive analysis: The package includes functions for PCA computation, result visualization, and outlier detection.
+
+## Prerequisites
+
+Before utilizing the PCA pipeline package, certain prerequisites must be met to ensure the smooth execution of the pipeline.
+
+### R and RStudio
+
+The pipeline requires R to be installed on your system. RStudio, while optional, is recommended for an enhanced coding environment.
+
+- **R**: Download and install R from [The Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/).
+- **RStudio**: Download and install RStudio from [the RStudio website](https://www.rstudio.com/products/rstudio/download/).
+
+### Installing PLINK2
+
+PLINK2 is a crucial component of the PCA pipeline. It can be installed using Conda or directly from the PLINK website.
+
+#### Conda Installation
+
+If you have Conda installed, you can install PLINK2 using the following commands in your terminal:
+
+```bash
+
+conda install bioconda::plink2
+conda install bioconda/label/cf201901::plink2
+
+#### Direct Download
+
+Alternatively, PLINK2 can be downloaded directly from its official website. Click on the link below and follow the instructions to download and install PLINK2 for your operating system:
+
+- [Download PLINK2](https://www.cog-genomics.org/plink/2.0/)
+
+### Setting the PLINK2 Path
+
+After installing PLINK2, ensure that its path is added to your system's environment variables, allowing it to be accessed from any directory in the terminal.
+
+#### In Terminal
+
+Typically, adding PLINK2 to the path can be done by modifying your shell's profile file (e.g., `~/.bash_profile`, `~/.bashrc`, or `~/.zshrc`), adding the following line:
+
+```bash
+
+export PATH="/path/to/plink2:$PATH"
+
+Please replace /path/to/plink2 with the actual installation directory of PLINK2.
+
+### In RStudio
+If you're running your pipeline through RStudio, make sure RStudio recognizes the PLINK2 path. You might need to set the path within your R session using:
+
+Sys.setenv(PATH = paste("/path/to/plink2", Sys.getenv("PATH"), sep=":"))
+
+## Package Functions
+
+### PCA_GD: PCA Using PLINK
+
+The `PCA_GD` function is the first step in the PCA pipeline, responsible for performing PCA on genotype data using PLINK. Users can specify parameters like the data path, metadata path, minor allele frequency, and more.
+
+```r
+# Example usage of PCA_GD
+PCA_GD(data_path = "path/to/data", metadata_path = "path/to/metadata", geno_format = "pfile")
