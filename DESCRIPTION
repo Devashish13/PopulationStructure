@@ -1,11 +1,18 @@
 Package: PopulationStructure
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Performs PCA Analysis Using PLINK, Identifies Outlier Individuals, and Produces Publication-Ready Plots
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Devashish Tripathi
+Maintainer: Devashish Tripathi <devashishtripathi697@gmail.com>
+Description: Implements a comprehensive PCA pipeline utilizing PLINK, widely used in genomic data analysis. The pipeline's design incorporates parameter settings from the Genome Asia 100K project, ensuring robustness and contemporary relevance. Users are responsible for installing PLINK. For details on PLINK installation, refer to its official documentation.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Imports:
+    ggplot2,
+    dplyr,
+    gridExtra,
+    grid,
+    ggthemes,
+    randomcoloR,
+
