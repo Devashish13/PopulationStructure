@@ -15,5 +15,5 @@ Imports:
     grid,
     ggthemes,
     randomcoloR,
-    vctr>=0.6.4,
+    vctrs>=0.6.4,
 
