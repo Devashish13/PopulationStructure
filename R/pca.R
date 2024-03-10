@@ -80,7 +80,7 @@ PCA_plot <- function(pcadata_path,metadata_path,
     }
   }
 
-  library(dplyr)
+  suppressPackageStartupMessages(library(dplyr))
   library(ggplot2)
   library(randomcoloR)
 
