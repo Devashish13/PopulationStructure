@@ -80,7 +80,7 @@ PCA_plot <- function(pcadata_path,metadata_path,
     }
   }
 
-  suppressWarnings(library(dplyr))
+  suppressPackageStartupMessages(library(dplyr))
   suppressWarnings(library(ggplot2))
   suppressWarnings(library(randomcoloR))
 
