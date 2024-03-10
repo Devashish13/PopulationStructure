@@ -41,8 +41,8 @@ PCA_plot <- function(pcadata_path,metadata_path,
                      figfile = "PCA_plot",...){
 
   theme_Publication <- function(base_size=14, base_family="sans") {
-    suppressPackageStartupMessages(library(grid))
-    suppressPackageStartupMessages(library(ggthemes))
+    suppressWarnings(library(grid))
+    suppressWarnings(library(ggthemes))
     (theme_foundation(base_size=base_size, base_family=base_family)
       + theme(plot.title = element_text(face = "bold",
                                         size = rel(1.2), hjust = 0.5, margin = margin(0,0,20,0)),
@@ -80,9 +80,9 @@ PCA_plot <- function(pcadata_path,metadata_path,
     }
   }
 
-  suppressPackageStartupMessages(library(dplyr))
-  suppressPackageStartupMessages(library(ggplot2))
-  library(randomcoloR)
+  suppressWarnings(library(dplyr))
+  suppressWarnings(library(ggplot2))
+  suppressWarnings(library(randomcoloR))
 
   df <- read.csv(metadata_path,check.names = F,sep = "\t")
   pca_eig_vec <- read.table(paste0(pcadata_path,".eigenvec"))
