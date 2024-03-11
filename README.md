@@ -6,6 +6,10 @@ The key features of this package include:
 2. Customizability: Although the default settings are derived from the Genome Asia 100K project, users can adjust parameters to suit their specific research needs.
 3. Comprehensive analysis: The package includes functions for PCA computation, result visualization, and outlier detection.
 
+The package can be installed using devtools
+```
+devtools::install_github("Devashish13/PopulationStructure")
+```
 
 The tutorial for using the package can be accessed in RPubs.
 
