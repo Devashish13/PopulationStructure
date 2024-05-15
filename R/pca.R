@@ -29,9 +29,6 @@ PCA_GD <- function(data_path, metadata_path,geno_format = "pfile",
     system(plink_pca)
 
   }
-  #pca_eig_vec_2 <- merge(pca_eig_vec,df,by.x = "sample.id",by.y = "SUBJID")
-
-  #write.table(pca_eig_vec_2,"pcadata_GTEx_V9.txt",col.names = T,row.names = F,quote = F,sep = "\t")
 
 }
 
