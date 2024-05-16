@@ -16,7 +16,7 @@ The \code{PCA_GD} function is designed to handle genotype data for principal com
   \item{metadata_path}{Path to the metadata file associated with the genotype data(tab separated file)}
   \item{geno_format}{Format of the genotype data. Default is \code{"pfile"}. Other formats must be specified.}
   \item{output_filename}{Base name for output files. Default is \code{"geno_data"}.}
-  \item{pruned_data}{Specifies whether to prune the data. Accepts \code{"yes"} or \code{"no"}. Default is \code{"no"}.}
+  \item{pruned_data}{Specifies whether genotype data is pruned. Accepts \code{"yes"} or \code{"no"}. Default is \code{"no"}.}
   \item{maf}{Minor allele frequency threshold for filtering variants. Default is \code{0.01}.}
   \item{geno}{Genotype missingness threshold for filtering variants. Default is \code{0.02}.}
   \item{indep_pairwise}{Parameters for the linkage disequilibrium pruning: window size, step size, and r^2 threshold, respectively. Default is \code{c(50, 5, 0.2)}.}
