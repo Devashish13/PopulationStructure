@@ -24,7 +24,7 @@ PCA_GD <- function(data_path, metadata_path,geno_format = "pfile",
     system(plink_pca)
 
   }else{
-    indiv_data  = read.table(metadata_path,header = F)
+    indiv_data  = read.table(metadata_path,header = T)
     plink_pca <- paste0("plink2 --bfile ",data_path," --pca ",nrow(indiv_data)," --out ",output_filename,"_QC_PCA_RESULT")
     system(plink_pca)
 
