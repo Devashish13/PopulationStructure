@@ -104,7 +104,12 @@ PCA_plot <- function(pcadata_path,metadata_path,
     shape_df = pca_eig_vec_2[,shape_var]
 
     if(is.null(shape_vec)){
-      shape_vec <- c(21:25,sample(7:14,(length(unique(pca_eig_vec_2[,shape_var]))-5)))
+      shape_len <- length(unique(pca_eig_vec_2[,shape_var]))
+      if (shape_len <= 5){
+        shape_vec <- sample(21:25,shape_len)
+      }else{
+        shape_vec <- c(21:25,sample(7:14,(shape_len-5)))
+      }
       names(shape_vec) <- levels(pca_eig_vec_2[,shape_var])
     }else{
       shape_vec <- shape_vec[levels(pca_eig_vec_2[,shape_var])]
