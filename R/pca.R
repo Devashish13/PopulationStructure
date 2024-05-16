@@ -84,7 +84,7 @@ PCA_plot <- function(pcadata_path,metadata_path,
   df <- read.csv(metadata_path,check.names = F,sep = "\t")
   pca_eig_vec <- read.table(paste0(pcadata_path,".eigenvec"))
   pca_eig_vec <- pca_eig_vec[,-1]
-  colnames(pca_eig_vec) <- c(sampleid_var,paste0("EV",1:nrow(df)))
+  colnames(pca_eig_vec) <- c(sampleid_var,paste0("EV",1:(ncol(pca_eig_vec)-1)))
   pca_eig_vec_2 <- merge(pca_eig_vec,df,by = sampleid_var)
 
   EV_x <- col_sel(x,pca_eig_vec_2)
